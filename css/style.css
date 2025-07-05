@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "poppins", serif;
 }
 html {
   scroll-behavior: smooth;
@@ -13,7 +14,9 @@ html {
 body {
   padding: 0px 50px;
   background-color: rgb(34, 40, 50);
-  font-family: "poppins", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 a {
   text-decoration: none;
@@ -28,25 +31,35 @@ h1 {
 }
 
 header {
-  height: 80px;
-  padding: 20px 15px;
+  position: fixed;
   color: #fff;
+  background-color: rgb(34, 40, 50);
+  border-bottom: 0.5px solid gray;
+  height: 80px;
+  width: 100%;
+  padding: 20px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 0.5px solid gray;
   flex-wrap: wrap;
   gap: 10px;
-  position: relative;
+  z-index: 999;
 }
-.links {
+ul {
+  list-style-type: none;
+}
+nav .links ul {
   display: flex;
+  flex-direction: row;
   gap: 30px;
   font-weight: 700;
   flex-wrap: wrap;
-  justify-content: center;
 }
-.nav a:hover {
+nav a {
+  display: inline-block;
+  transition: 0.3s ease-in-out;
+}
+nav a:hover {
   color: var(--mainColor);
   transform: scale(1.2);
 }
@@ -94,26 +107,33 @@ nav .menu:hover .mid {
   nav li {
     padding: 20px;
   }
+  nav .links ul {
+    display: flex;
+    flex-direction: column;
+  }
   nav:hover li:hover {
     text-align: center;
     width: 100%;
-    display: block;
     background-color: #252828d8;
   }
-  nav li a{
-  transform: scale(1.4);
-
+  nav li a {
+    display: block;
+    transform: scale(1.4);
   }
 }
 /* Start Hero Section  */
 .hero {
-  height: auto;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
-  padding: 40px 0;
+  padding: 50px 0;
+}
+@media (max-width: 767px) {
+  .info-sec {
+    margin-top: 100px;
+  }
 }
 .info-sec h1 {
   font-size: 30px;
@@ -225,25 +245,25 @@ nav .menu:hover .mid {
   object-fit: cover;
   transition: 0.3s ease-in-out;
   border-radius: 20px 20px 0 0;
+  cursor: pointer;
 }
 .project-dis {
   padding: 15px;
 }
-ul {
+.project-dis ul {
   display: flex;
   flex-direction: column;
-  list-style-type: none;
   padding: 20px;
 }
 ul li {
   color: #fff;
 }
-ul li:last-child {
+.project-dis ul li:last-child {
   margin-top: 5px;
   text-align: center;
   transition: 0.3s;
 }
-ul li:last-child a:hover {
+.project-dis ul li:last-child a:hover {
   color: #00adb5;
 }
 h4 {
@@ -299,20 +319,19 @@ i:hover {
 /* End Contact Section  */
 
 /* Responsive Design */
+@media (max-width: 1020px) {
+  .info-sec {
+    margin-top: 80px;
+  }
+}
 @media (max-width: 768px) {
   body {
     padding: 0 20px;
   }
-
-  .info-sec h1,
-  .info-sec .title {
-    font-size: 24px;
+  .btn {
+    display: flex;
+    justify-content: center;
   }
-
-  .about-part h1 {
-    font-size: 28px;
-  }
-
   .cv {
     font-size: 14px;
     padding: 8px 16px;
