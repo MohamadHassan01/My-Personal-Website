@@ -313,9 +313,7 @@ ul li:hover i {
 i {
   transition: 0.3s ease-in-out;
 }
-i:hover {
-  color: var(--mainColor);
-}
+
 /* End Contact Section  */
 
 /* Responsive Design */
