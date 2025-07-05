@@ -27,7 +27,7 @@ h1 {
   color: #fff;
 }
 
-nav {
+header {
   height: 80px;
   padding: 20px 15px;
   color: #fff;
@@ -37,6 +37,7 @@ nav {
   border-bottom: 0.5px solid gray;
   flex-wrap: wrap;
   gap: 10px;
+  position: relative;
 }
 .links {
   display: flex;
@@ -45,11 +46,65 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
 }
-.links a:hover {
+.nav a:hover {
   color: var(--mainColor);
   transform: scale(1.2);
 }
 
+nav .menu {
+  width: 40px;
+  height: 20px;
+  padding: 10px 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 4px;
+}
+nav .menu span {
+  width: 100%;
+  height: 1px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+}
+nav .menu .mid {
+  width: 50%;
+  transition: 0.3s ease-in-out;
+}
+nav .menu:hover .mid {
+  width: 100%;
+}
+@media (min-width: 767px) {
+  nav .menu {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  nav .links {
+    display: none;
+  }
+  nav:hover .links {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    background-color: #2b2f2fd8;
+  }
+  nav li {
+    padding: 20px;
+  }
+  nav:hover li:hover {
+    text-align: center;
+    width: 100%;
+    display: block;
+    background-color: #252828d8;
+  }
+  nav li a{
+  transform: scale(1.4);
+
+  }
+}
 /* Start Hero Section  */
 .hero {
   height: auto;
@@ -162,7 +217,7 @@ nav {
   transition: transform 0.3s ease;
 }
 .project img:hover {
-  transform: translateY(-5px) scale(1.05) rotate(0.5deg);
+  transform: translateY(-5px) scale(1.05);
 }
 .project img {
   width: 100%;
