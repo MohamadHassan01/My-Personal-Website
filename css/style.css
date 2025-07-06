@@ -45,6 +45,7 @@ header {
   gap: 10px;
   z-index: 999;
 }
+
 ul {
   list-style-type: none;
 }
@@ -87,6 +88,7 @@ nav .menu .mid {
 nav .menu:hover .mid {
   width: 100%;
 }
+
 @media (min-width: 767px) {
   nav .menu {
     display: none;
@@ -356,5 +358,15 @@ i {
   .hero,
   .about-sec {
     padding: 20px 0;
+  }
+}
+@media (max-width: 440px) {
+  .info-sec h1,
+  h1,
+  .title {
+    font-size: 26px;
+  }
+  .logo span {
+    display: none;
   }
 }
